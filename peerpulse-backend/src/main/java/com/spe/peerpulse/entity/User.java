@@ -1,7 +1,7 @@
 package com.spe.peerpulse.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.majorproject.gradeusbackend.utils.Role;
+import com.spe.peerpulse.entity.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

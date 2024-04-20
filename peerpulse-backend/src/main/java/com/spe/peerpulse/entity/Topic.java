@@ -32,5 +32,5 @@ public class Topic {
     @JoinColumn(name = "class_id", nullable = false)
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "classId")
     @JsonIdentityReference(alwaysAsId = true)
-    private java.lang.Class classObj;
+    private Class classObj;
 }
