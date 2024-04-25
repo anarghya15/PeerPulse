@@ -2,8 +2,8 @@ package com.spe.peerpulse.service;
 
 import com.spe.peerpulse.entity.Class;
 import com.spe.peerpulse.exceptions.InvalidAccessException;
-import com.spe.peerpulse.model.ScoreModel;
-import com.spe.peerpulse.model.ScoreResponse;
+import com.spe.peerpulse.model.request.ScoreModel;
+import com.spe.peerpulse.model.response.ScoreResponse;
 import com.spe.peerpulse.repository.*;
 import com.spe.peerpulse.entity.*;
 import lombok.extern.slf4j.Slf4j;

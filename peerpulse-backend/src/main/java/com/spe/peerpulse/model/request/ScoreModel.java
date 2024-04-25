@@ -1,4 +1,4 @@
-package com.spe.peerpulse.model;
+package com.spe.peerpulse.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

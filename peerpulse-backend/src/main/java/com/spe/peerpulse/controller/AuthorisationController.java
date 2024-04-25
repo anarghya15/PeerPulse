@@ -1,9 +1,9 @@
 package com.spe.peerpulse.controller;
 
 
-import com.spe.peerpulse.model.AuthResponse;
-import com.spe.peerpulse.model.LoginRequest;
-import com.spe.peerpulse.model.RegisterRequest;
+import com.spe.peerpulse.model.response.AuthResponse;
+import com.spe.peerpulse.model.request.LoginRequest;
+import com.spe.peerpulse.model.request.RegisterRequest;
 import com.spe.peerpulse.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

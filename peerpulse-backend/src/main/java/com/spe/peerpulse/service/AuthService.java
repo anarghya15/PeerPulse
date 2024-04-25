@@ -2,9 +2,9 @@ package com.spe.peerpulse.service;
 
 import com.spe.peerpulse.entity.Role;
 import com.spe.peerpulse.entity.User;
-import com.spe.peerpulse.model.AuthResponse;
-import com.spe.peerpulse.model.LoginRequest;
-import com.spe.peerpulse.model.RegisterRequest;
+import com.spe.peerpulse.model.response.AuthResponse;
+import com.spe.peerpulse.model.request.LoginRequest;
+import com.spe.peerpulse.model.request.RegisterRequest;
 import com.spe.peerpulse.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

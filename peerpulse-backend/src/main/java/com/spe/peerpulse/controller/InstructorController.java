@@ -2,8 +2,8 @@ package com.spe.peerpulse.controller;
 
 import com.spe.peerpulse.entity.*;
 import com.spe.peerpulse.entity.Class;
-import com.spe.peerpulse.model.GenericResponse;
-import com.spe.peerpulse.model.IdList;
+import com.spe.peerpulse.model.response.GenericResponse;
+import com.spe.peerpulse.model.request.IdList;
 import com.spe.peerpulse.service.InstructorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
