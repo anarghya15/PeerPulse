@@ -1,0 +1,38 @@
+version: '3'
+services:
+  mysqldb:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=peerpulse
+      - MYSQL_PASSWORD=peerpulse
+      - MYSQL_DATABASE=peerpulse
+    ports:
+      - 3307:3306
+    volumes:
+      - db:/var/lib/mysql
+
+  backend:
+    build: ./peerpulse-backend
+    restart: always
+    image: peerpulse-backend
+    ports:
+      - 8500:8500
+    depends_on:
+      - mysqldb
+    environment:
+      - MYSQL_HOST=mysqldb
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=peerpulse
+      - MYSQL_PASSWORD=peerpulse
+      - MYSQL_DATABASE=peerpulse
+      - MYSQL_URL=3306
+
+  frontend:
+    build: ./peerpulse-frontend
+    image: peerpulse-frontend
+    ports:
+      - 4200:4200
+
+volumes:
+  db: 
