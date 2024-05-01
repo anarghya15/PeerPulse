@@ -6,7 +6,7 @@ EXPOSE 4200
 RUN npm run build --prod
 
 FROM nginx:latest
-COPY --from=builder /app/dist/gradeus-frontend /usr/share/nginx/html
+COPY --from=builder /app/dist/peerpulse-frontend /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx/nginx.conf /etc/nginx/conf.d
 
