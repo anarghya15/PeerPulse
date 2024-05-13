@@ -20,10 +20,8 @@ spec:
         tier: database
     spec:
       containers:
-      - image: mysql:8.0 # pull image from docker-hub
+      - image: mysql:latest # pull image from docker-hub
         imagePullPolicy: Always
-        args:
-          - "--ignore-db-dir=lost+found" # Workaround for https://github.com/docker-library/mysql/issues/186
         name: mysql 
         env:
         - name: MYSQL_ROOT_PASSWORD # Setting Root Password of mysql From a 'Secret'
