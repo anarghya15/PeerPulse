@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: peerpulse-frontend-service
+  labels:
+    name: peerpulse-frontend-deployment
+spec:
+  ports:
+    - port: 80        
+      targetPort: 80  
+      protocol: TCP   
+  selector:           
+    app: peerpulse-frontend-deployment
+  type: LoadBalancer
