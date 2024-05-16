@@ -9,13 +9,11 @@
         kubectl delete -f kubeDeploy/mysql-deployment.yml --ignore-not-found=true
         kubectl delete -f kubeDeploy/backend-deployment.yml --ignore-not-found=true
         kubectl delete -f kubeDeploy/frontend-deployment.yml --ignore-not-found=true
-        kubectl delete -f kubeDeploy/mysql-root-credentials.yml --ignore-not-found=true
-        kubectl delete -f kubeDeploy/mysql-credentials.yml --ignore-not-found=true
-        kubectl delete -f kubeDeploy/mysql-configmap.yml --ignore-not-found=true
-        kubectl delete -f kubeDeploy/mysql-service.yml --ignore-not-found=true
-        kubectl delete -f kubeDeploy/backend-service.yml --ignore-not-found=true
-        kubectl delete -f kubeDeploy/frontend-service.yml --ignore-not-found=true
-        kubectl delete -f kubeDeploy/mysql-pvc.yml --ignore-not-found=true
+                
+    - name: Deploying logstash and filebeats inside the kubernetes cluster
+      ansible.builtin.shell: |
+        helm upgrade --install filebeat kubeDeploy/filebeat
+        helm upgrade --install logstash kubeDeploy/logstash
         
     - name: Adding secrets to kubernetes cluster
       ansible.builtin.shell: |
@@ -27,7 +25,7 @@
 
     - name: Deploying application to kubernetes cluster
       ansible.builtin.shell: |        
-        kubectl apply -f kubeDeploy/mysql-pvc.yml
+      	kubectl apply -f kubeDeploy/mysql-pvc.yml
         kubectl apply -f kubeDeploy/mysql-deployment.yml
         kubectl apply -f kubeDeploy/mysql-service.yml
         kubectl apply -f kubeDeploy/backend-deployment.yml
