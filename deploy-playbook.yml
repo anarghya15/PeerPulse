@@ -1,7 +1,9 @@
 ---
   - name: "Deploying on the kubernetes cluster"
     hosts: localhost
-    connection: local 
+    connection: local
+    environment:
+      KUBECONFIG: /var/lib/jenkins/.kube/config 
     
     tasks:
     - name: Deleting older application deployment

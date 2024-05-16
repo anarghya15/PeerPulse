@@ -3,6 +3,7 @@ pipeline {
     environment {
         frontendRepositoryName = "anarghya15/peerpulse-frontend"
         backendRepositoryName = "anarghya15/peerpulse-backend"
+        KUBECONFIG = "/var/lib/jenkins/.kube/config"
         tag = "latest"
         frontendImage = ""
         backendImage = ""
