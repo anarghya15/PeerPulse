@@ -44,7 +44,7 @@ logstashPipeline:
         #ilm_enabled => false
         #user => "elastic"
         #password => "MfB38xrl3a0udkj5dYsJR97o"
-        hosts => "https://3001-49-207-244-70.ngrok-free.app:443"
+        hosts => "https://7fe2-49-207-246-101.ngrok-free.app:443"
         index => "peerpulse-applog-%{+YYYY.MM.dd}"
       }
       stdout { codec => rubydebug }
