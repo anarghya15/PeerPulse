@@ -39,6 +39,17 @@ pipeline {
                 }
             }
         }
+        stage('Build frontend code using npm') {
+            steps {
+                script {
+                    // Navigate to the frontend directory and install dependencies
+                    sh 'cd peerpulse-frontend && npm install'
+                    
+                    // Run tests (if you have tests configured)
+                    sh 'cd peerpulse-frontend && npm test'
+                }
+            }
+        }
         stage('Create frontnd docker image') {
             steps {
                 script{
@@ -61,6 +72,20 @@ pipeline {
             steps {
               ansiblePlaybook installation: 'Ansible', playbook: 'deploy-playbook.yml'
             }
+        }
+    }
+    post {
+        success {
+            mail subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      			body: """SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
+                Check console output at ${env.BUILD_URL}""", 
+            	to: 'h.anarghya@iiitb.ac.in'
+        }
+        failure {
+            mail subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      			body: """FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
+                Check console output at ${env.BUILD_URL}""", 
+            	to: 'h.anarghya@iiitb.ac.in'
         }
     }
 }
