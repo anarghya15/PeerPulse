@@ -40,7 +40,6 @@ logstashPipeline:
     output {
       elasticsearch {
         #cloud_id => "c403670d93b44b39a8210073d862d0f7:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyQ5NjlhNzI0YzBkZTk0NjEyYjRjY2I5ZmZjYjZlM2JlOSQyNDk0Mzk5YmU0ZDg0YjMwOWU4NmIxYTYzOTE5YThiNw=="
-        #ssl => true
         #ilm_enabled => false
         #user => "elastic"
         #password => "MfB38xrl3a0udkj5dYsJR97o"
