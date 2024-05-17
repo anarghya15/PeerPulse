@@ -39,17 +39,6 @@ pipeline {
                 }
             }
         }
-        stage('Build frontend code using npm') {
-            steps {
-                script {
-                    // Navigate to the frontend directory and install dependencies
-                    sh 'cd peerpulse-frontend && npm install'
-                    
-                    // Run tests (if you have tests configured)
-                    sh 'cd peerpulse-frontend && npm test'
-                }
-            }
-        }
         stage('Create frontnd docker image') {
             steps {
                 script{
