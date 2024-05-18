@@ -8,7 +8,7 @@ pipeline {
         AZURE_TENANT_ID = credentials('azure-tenant-id')
         AZURE_CLIENT_ID = credentials('azure-service-principal')
         AZURE_CLIENT_SECRET = credentials('azure-client-secret')
-        AZURE_RESOURCE_GROUP = "AZURE_AKS_CLUSTER_NAME"
+        AZURE_RESOURCE_GROUP = "spe-project-peerpulse"
         AZURE_AKS_CLUSTER_NAME = "peerpulse-kubecluster"
         tag = "latest"
         frontendImage = ""
