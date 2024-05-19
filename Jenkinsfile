@@ -63,18 +63,18 @@ pipeline {
             }
         }
 
-        stage('Configure kubectl for AKS') {
-            steps {
-                script {
-                    // Login to Azure
-                    sh '''
-                    az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
-                    az account set --subscription $AZURE_SUBSCRIPTION_ID
-                    az aks get-credentials --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_AKS_CLUSTER_NAME --file $KUBECONFIG
-                    '''
-                }
-            }
-        }
+        // stage('Configure kubectl for AKS') {
+        //     steps {
+        //         script {
+        //             // Login to Azure
+        //             sh '''
+        //             az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
+        //             az account set --subscription $AZURE_SUBSCRIPTION_ID
+        //             az aks get-credentials --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_AKS_CLUSTER_NAME --file $KUBECONFIG
+        //             '''
+        //         }
+        //     }
+        // }
         
         stage('Deploy to Kubernetes using Ansible') {
             steps {
