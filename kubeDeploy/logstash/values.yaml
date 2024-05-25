@@ -39,7 +39,7 @@ logstashPipeline:
 
     output {
       elasticsearch {
-        hosts => "https://a214-49-207-243-232.ngrok-free.app:443"
+        hosts => "https://ddef-49-207-243-232.ngrok-free.app:443"
         index => "peerpulse-applog-%{+YYYY.MM.dd}"
       }
       stdout { codec => rubydebug }
